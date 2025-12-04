@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Anime Story Web — Enhanced Offline</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="light">
+<header class="top-bar">
+  <div class="left">
+    <h1 class="logo">Anime Story Web</h1>
+  </div>
+  <div class="center">
+    <input id="searchInput" placeholder="Search stories, tags..." />
+    <select id="filterSelect">
+      <option value="all">All</option>
+      <option value="topRated">Top Rated</option>
+      <option value="mostViewed">Most Viewed</option>
+      <option value="recent">Recent</option>
+    </select>
+  </div>
+  <div class="right">
+    <button id="themeSwitch">Theme</button>
+    <select id="colorSchemeSelect">
+      <option value="default">Purple</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+    </select>
+    <button id="randomStoryBtn">🎲</button>
+    <a href="admin.html" class="btn" style="background:transparent;border:1px solid var(--accent);color:var(--accent);padding:6px 8px;border-radius:8px;text-decoration:none">Admin</a>
+  </div>
+</header>
+
+<main>
+  <div id="adminNoticeContainer" class="notice-board-container">
+    <div id="noticeBoard" class="card notice-board">
+      <strong>Notice:</strong> Stories are stored locally in your browser.
+    </div>
+    <div id="noticeAdminPanel" class="admin-panel hidden">
+      <input type="text" id="noticeText" placeholder="Enter notice message">
+      <select id="noticeType">
+        <option value="info">Info</option>
+        <option value="success">Success</option>
+        <option value="error">Error</option>
+      </select>
+      <input type="color" id="noticeColor" value="#2196F3">
+      <button onclick="addAdminNotice()">Add Notice</button>
+    </div>
+  </div>
+
+  <div class="options-container">
+    <button class="option1">Option 1</button>
+    <button class="option2">Option 2</button>
+  </div>
+
+  <section id="storiesGrid" class="grid"></section>
+  <section id="bookContainer" class="book-container hidden"></section>
+</main>
+
+<footer class="footer">
+  <small>Offline demo • Stories saved in localStorage</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
